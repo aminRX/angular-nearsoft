@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  span.glyphicon.glyphicon-open
+  button(type="button", ng-init="agregar=false", ng-click="agregar = agregar ? false : true;").btn.btn-success Agregar
+  div(ng-show="agregar")
+    form(name="Agregar" ng-submit="add()")
+      input(type="text", placeholder="Nombre" ng-model="agregarNombre").form-control
+      input(type="email", placeholder="Correo" ng-model="agregarCorreo" ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/").form-control
+      input(type="submit").btn.btn-default
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th #
+        th Nombre
+        th Edad
+        th Correo
+        th Eliminar
+        th Editar
+    tbody
+      tr(ng-repeat="user in users")
+        td {{$index + 1}}
+        td {{user.name}}
+        td {{user.edad}}
+        td {{user.email}}
+        td
+          button(type="button" ng-click="delete($index)").btn.btn-danger Eliminar
+        td
+          form(name="Editar" ng-submit="update($index)")
+            input(type="text", placeholder="Nombre" ng-model="editarNombre").form-control
+            input(type="text", placeholder="Correo" ng-model="editarCorreo" ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/").form-control
+            input(type="submit").btn.btn-default

@@ -1,0 +1,18 @@
+{
+  "name": "crud",
+  "version": "0.0.1",
+  "authors": [
+    "Amin Ogarrio <amin.ogarrio@gmail.com>"
+  ],
+  "description": "frontend crud",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-mocks": "~1.2.15",
+    "bootstrap": "~3.1.1",
+    "angular-route": "~1.2.15",
+    "angular-resource": "~1.2.15",
+    "jquery": "1.10.2",
+    "angular-animate": "~1.2.15"
+  }
+}
